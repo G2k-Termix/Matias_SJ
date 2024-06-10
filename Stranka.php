@@ -23,9 +23,9 @@ function displayHeader() {
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="/Stranka.php" class="w3-bar-item w3-button w3-padding-large">DOMOV</a></li>
-    <a href="/podstranka1.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KOMPONENTY</a>
-    <a href="/podstranka2.html" class= "w3-bar-item w3-button w3-padding-large w3-hide-small">VIDEO NÁVOD</a>
+    <a href="Stranka.php" class="w3-bar-item w3-button w3-padding-large">DOMOV</a></li>
+    <a href="podstranka1.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KOMPONENTY</a>
+    <a href="podstranka2.html" class= "w3-bar-item w3-button w3-padding-large w3-hide-small">VIDEO NÁVOD</a>
     <a href="Stranka.html#kontakt" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KONTAKT</a>
     <div class="w3-dropdown-hover w3-hide-small">
       </div>
@@ -114,11 +114,7 @@ echo '
 
 <?php displayFooter(); ?>
     
-        
-        
-      </div>
-    </div>
-  </footer>
+
 
 
 
