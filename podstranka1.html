@@ -49,24 +49,35 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-container w3-content w3-padding-64 " style="max-width:800px">
       <h2 class="w3-wide w3-center"><strong>Nákup Komponentov</strong></h2>
       <p class="w3-opacity w3-center"><i>Čo budeme nakupovať</i></p>
-      
-      <div style="display: flex; justify-content: center;">
-        <a href="Podstranka-WATTcalculator.html" style="
+
+      <style>
+        .button {
+          display: inline-block;
           background-color: #ffffff;
           color: rgb(0, 0, 0);
           padding: 10px 15px;
           text-decoration: none;
           text-align: center;
           transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-          max-width: 100%;
-          "
-          onmouseover="this.style.backgroundColor='#333'; this.style.color='#fff';"
-          onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='rgb(0, 0, 0)';"
-        >
+          border: 1px solid #ccc;
+          cursor: pointer;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        .button:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      </style>
+
+      <div style="display: flex; justify-content: center;">
+        <a href="PC_parts_shop/index.php" class="button">
           <strong>WATT Kalkulačka</strong>
         </a>
       </div>
-      
+
+
       <style>
         ul {
           list-style-type: none;
