@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sk">
+<title>BUILDyourPC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+.space{
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="Stranka.php" class="w3-bar-item w3-button w3-padding-large">DOMOV</a>
+    <a href="podstranka1.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KOMPONENTY</a>
+    <a href="podstranka2.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">VIDEO NÁVOD</a>
+    <a href="Stranka.php#kontakt" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KONTAKT</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#domov" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DOMOV</a>
+  <a href="#nakup komponentov" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NÁKUP</a>
+  <a href="#kontakt" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">KONTAKT</a>
+  <a href="podstranka2.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">VIDEO NÁVOD</a>
+</div>
+
+
+
+
+
+  <div class="w3-black" id="nakup komponentov">
+    <div class="w3-container w3-content w3-padding-64 " style="max-width:800px">
+      <h2 class="w3-wide w3-center"><strong>Nákup Komponentov</strong></h2>
+      <p class="w3-opacity w3-center"><i>Čo budeme nakupovať</i></p>
+      
+      <div style="display: flex; justify-content: center;">
+        <a href="Podstranka-WATTcalculator.html" style="
+          background-color: #ffffff;
+          color: rgb(0, 0, 0);
+          padding: 10px 15px;
+          text-decoration: none;
+          text-align: center;
+          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+          max-width: 100%;
+          "
+          onmouseover="this.style.backgroundColor='#333'; this.style.color='#fff';"
+          onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='rgb(0, 0, 0)';"
+        >
+          <strong>WATT Kalkulačka</strong>
+        </a>
+      </div>
+      
+      <style>
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+        a {
+          text-decoration: none;
+          color: #807b7b;
+          display: block;
+          transition: all 0.3s ease-in-out;
+        }
+        a:hover {
+          color: #000;
+          background-color: #ccc;
+        }
+        strong {
+          font-weight: bold;
+        }
+      </style>
+      
+      <ul>
+        <li>
+          <a href="Podstranka-zdroj.html"><strong>Zdroj</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-doska.html"><strong>Základná doska / Mother Board</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-Procesor.html"><strong>Procesor</strong></a>
+        </li>
+        <li>
+          <a href="Podstanka-RAM.html"><strong>Pamäť RAM</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-SSD.html"><strong>SSD Disk</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-HDD.html"><strong>HDD Disk</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-GrafickeKarty.html"><strong>Grafická karta</strong></a>
+        </li>
+        <li>
+          <a href="Podstranka-počbedne.html"><strong>Počítačová bedňa</strong></a>
+        </li>
+      </ul>
+    
+    
+      <section>
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom ">
+          <img src="img/Zdroj.jpg" alt="Zdroj" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Počítačový Zdroj</b></p>
+            <a href="https://www.alza.sk/pc-zdroje/18849164.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button></a>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/Zakladna%20doska.png" alt="Základná doska" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Základná doska</b></p>
+            <a href="https://www.alza.sk/zakladne-dosky/18842832.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button></a>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom ">
+          <img src="Procesor.jfif" alt="Procesor" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Procesor</b></p>
+            <a href="https://www.alza.sk/cpu-procesory/18842843.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+<div>
+  <div class="w3-black" id="nakup komponentov">
+   <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+     <div class="w3-third w3-margin-bottom">
+      <img src="RAM.jfif" alt="Pamäť RAM" width=100% height=125 class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+      <p><b>RAM</b></p>
+      <a href="https://www.alza.sk/pamate/18842853.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button>
+      </div>
+    </div>
+    
+    <div class="w3-third w3-margin-bottom">
+      <img src="img/Grafika.jpg" alt="Grafika" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Grafická Karta</b></p>
+        <a href="https://www.alza.sk/graficke-karty/18842862.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button></a>
+        </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="Pamäť.jfif" alt="Pamäť SSD/HDD" width=100% height=130 class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Pamäť HDD/SSD</b></p>
+        <a href="https://www.alza.sk/pevne-disky/18842851.htm"><button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Kúpiť</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer class="domovkontakt">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="kontakt">
+    <h2 class="w3-wide w3-center">Kontakt</h2>
+    <p class="w3-opacity w3-center"><i>Pripomienky? Nechajte nám odozvu</i></p>
+    <div class="w3-row-padding" style="margin-top: 48px;">
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding-32 w3-center">
+          <i class="fa fa-map-marker fa-2x w3-margin-bottom"></i>
+          <p>Krnča, 956 19</p>
+          <i class="fa fa-phone fa-2x w3-margin-bottom"></i>
+          <p>+421 950 233 040</p>
+          <i class="fa fa-envelope fa-2x w3-margin-bottom"></i>
+          <p>Numb333rik@gmail.com</p>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="w3-card-4 w3-padding-32 w3-round-large w3-center">
+          <form action="/odoslat-pripomienku" method="post" class="w3-margin-top">
+            <label for="meno" class="w3-text-grey w3-monospace w3-center">Meno:</label>
+            <input type="text" id="meno" name="meno" class="w3-input w3-border w3-margin-bottom w3-monospace w3-center" required>
+            <label for="email" class="w3-text-grey w3-monospace w3-center">Email:</label>
+            <input type="email" id="email" name="email" class="w3-input w3-border w3-margin-bottom w3-monospace w3-center" required>
+            <label for="pripomienka" class="w3-text-grey w3-monospace w3-center">Pripomienka:</label>
+            <textarea id="pripomienka" name="pripomienka" rows="5" class="w3-input w3-border w3-margin-bottom w3-monospace w3-center" required></textarea>
+            <button type="submit" class="w3-button w3-block w3-black w3-text-white w3-margin-bottom w3-hover-opacity w3-monospace w3-center">Odoslať</button>
+          </form>
+        </div>
+      </div>
+
+      
+   
+
+   
+  
+</body>
+</html>
+
+</php>
