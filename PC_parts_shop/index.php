@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['parts'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Parts Shop</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 <div class="container">
@@ -58,20 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['parts'])) {
     </header>
     <form id="partsForm" action="index.php" method="post">
         <div class="part-category">
-            <h2>CPU</h2>
-            <?php displayParts('CPU'); ?>
-        </div>
-        <div class="part-category">
-            <h2>GPU</h2>
-            <?php displayParts('GPU'); ?>
-        </div>
-        <div class="part-category">
             <h2>RAM</h2>
             <?php displayParts('RAM'); ?>
-        </div>
-        <div class="part-category">
             <h2>Storage</h2>
             <?php displayParts('Storage'); ?>
+            <h2>GPU</h2>
+            <?php displayParts('GPU'); ?>
+            <h2>CPU</h2>
+            <?php displayParts('CPU'); ?>
         </div>
         <button type="submit">Calculate Total Wattage</button>
     </form>
@@ -81,16 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['parts'])) {
         </div>
     <?php endif; ?>
 </div>
-<script>
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            let totalWattage = 0;
-            document.querySelectorAll('input[type="checkbox"]:checked').forEach(checked => {
-                totalWattage += parseInt(checked.dataset.wattage);
-            });
-            document.getElementById('result').innerText = 'Total Wattage: ' + totalWattage + 'W';
-        });
-    });
-</script>
+<script rel="PC_parts_shop/assets/js/scripts.js"></script>
 </body>
 </html>

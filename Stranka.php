@@ -14,7 +14,9 @@
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
-<style type="text/css" id="operaUserStyle"></style></head><body>
+<style type="text/css" id="operaUserStyle"></style>
+</head>
+<body>
 <?php
 function displayHeader() {
   echo ' 
@@ -57,15 +59,15 @@ function displayHeader() {
         <h3 class="w3-wide"><strong>Doporučené stránky na nakupovanie.</strong></h3>
       <div class="w3-third obraskyhover">
         <p class = "w3-monospace">Alza.sk</p>
-        <a class="" href="https://www.alza.sk/"><img src="alza.png" class="w3-round w3-margin-bottom" style="width:60%"></a>
+        <a class="" href="https://www.alza.sk/"><img src="img/Alza.png" class="w3-round w3-margin-bottom" style="width:60%"></a>
       </div>
       <div class="w3-third obraskyhover">
-        <p class = "w3-monospace">Herueka.sk</p>
+        <p class = "w3-monospace">Heureka.sk</p>
         <a class="" href="https://www.heureka.sk/"><img src="img/Herueka.png" class="w3-round w3-margin-bottom" style="width:60%"></a>
       </div>
       <div class="w3-third obraskyhover">
         <p class = "w3-monospace">Microsoft.com</p>
-        <a class="" href="https://www.microsoft.com/"><img src="/img/Microsoft.png" class="w3-round" style="width:60%"></a>
+        <a class="" href="https://www.microsoft.com/"><img src="img/Microsoft.png" class="w3-round" style="width:60%"></a>
       </div>
     </div>
   </div>
