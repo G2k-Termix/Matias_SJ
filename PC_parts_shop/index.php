@@ -1,46 +1,70 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pc_parts_shop";
+class Database {
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $dbname = "pc_parts_shop";
+    public $conn;
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    public function __construct() {
+        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-function displayParts($type) {
-    global $conn;
-    $sql = "SELECT id, name, wattage, price, image_url FROM parts WHERE type='$type'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="part">';
-            echo '<input type="checkbox" name="parts[]" value="' . $row['id'] . '" data-wattage="' . $row['wattage'] . '" data-price="' . $row['price'] . '">';
-            echo '<img src="' . $row['image_url'] . '" alt="' . $row['name'] . '">';
-            echo '<label>' . $row['name'] . ' - ' . $row['wattage'] . 'W ($' . $row['price'] . ')</label>';
-            echo '</div>';
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
-    } else {
-        echo "<p>No parts available.</p>";
+    }
+
+    public function query($sql) {
+        return $this->conn->query($sql);
     }
 }
+
+class Part {
+    private $db;
+
+    public function __construct($db) {
+        $this->db = $db;
+    }
+
+    public function displayParts($type) {
+        $sql = "SELECT id, name, wattage, price, image_url FROM parts WHERE type='$type'";
+        $result = $this->db->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="part">';
+                echo '<input type="checkbox" name="parts[]" value="' . $row['id'] . '" data-wattage="' . $row['wattage'] . '" data-price="' . $row['price'] . '">';
+                echo '<img src="' . $row['image_url'] . '" alt="' . $row['name'] . '">';
+                echo '<label>' . $row['name'] . ' - ' . $row['wattage'] . 'W ($' . $row['price'] . ')</label>';
+                echo '</div>';
+            }
+        } else {
+            echo "<p>No parts available.</p>";
+        }
+    }
+
+    public function calculateTotalWattage($partIds) {
+        $totalWattage = 0;
+        foreach ($partIds as $partId) {
+            $sql = "SELECT wattage FROM parts WHERE id=$partId";
+            $result = $this->db->query($sql);
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $totalWattage += $row['wattage'];
+            }
+        }
+        return $totalWattage;
+    }
+}
+
+$db = new Database();
+$part = new Part($db);
 
 $totalWattage = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['parts'])) {
-    foreach ($_POST['parts'] as $partId) {
-        $sql = "SELECT wattage FROM parts WHERE id=$partId";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $totalWattage += $row['wattage'];
-        }
-    }
+    $totalWattage = $part->calculateTotalWattage($_POST['parts']);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -59,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['parts'])) {
     <form id="partsForm" action="index.php" method="post">
         <div class="part-category">
             <h2>RAM</h2>
-            <?php displayParts('RAM'); ?>
+            <?php $part->displayParts('RAM'); ?>
             <h2>Storage</h2>
-            <?php displayParts('Storage'); ?>
+            <?php $part->displayParts('Storage'); ?>
             <h2>GPU</h2>
-            <?php displayParts('GPU'); ?>
+            <?php $part->displayParts('GPU'); ?>
             <h2>CPU</h2>
-            <?php displayParts('CPU'); ?>
+            <?php $part->displayParts('CPU'); ?>
         </div>
         <button type="submit">Calculate Total Wattage</button>
     </form>
